@@ -16,7 +16,7 @@ class App extends React.Component {
   getUsers = () => {
     fetch('http://uinames.com/api/?amount=5&ext')
       .then(data => data.json())
-      .then(data => this.setState({ users: data, userCheck: true }))
+      .then(data => this.setState({ users: data, userCheck: true, userInfos: [] }))
       .catch(err => err);
   };
 
