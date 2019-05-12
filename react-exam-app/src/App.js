@@ -29,7 +29,7 @@ class App extends React.Component {
   };
 
   render() {
-    return (
+    return this.state.userCheck ? (
       <div className="main">
         <div className="nav-bar">
           <button onClick={this.getUsers} className="button">
@@ -40,6 +40,15 @@ class App extends React.Component {
           <UserNames users={this.state.users} handleClick={index => this.handleClick(index)} />
           <UserInfos user={this.state.userInfos} />
         </div>
+      </div>
+    ) : (
+      <div className="main">
+        <div className="nav-bar">
+          <button onClick={this.getUsers} className="button">
+            Get Users!
+          </button>
+        </div>
+        <div>No user to show yet...</div>
       </div>
     );
   }
